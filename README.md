@@ -12,8 +12,7 @@
 #### 2. 프로젝트 실행
 * H2 database 설치
 * intellij lombok 플러그인 설치
-* Enable annotation processing
-* Preferences - Annotation Procesors - Enable annotation processing 체크
+* Setting - Enable annotation processing 체크
 
 실행
 * Run -> SpringBootApiApplication
@@ -27,7 +26,7 @@
 * 전문기본
 > CREATE CACHED TABLE "PUBLIC"."MSG_BASE"("MGNT_NO" VARCHAR(20) NOT NULL,"MSG_CONTS" VARCHAR(450) NOT NULL,"MSG_ST_CD" VARCHAR(1),"ERR_CD" VARCHAR(10),"ERR_CONTS" VARCHAR(500));
 
-#### 4. 문제해결
+#### 4. 문제해결1
 1. 테이블
     - 통계를 위해 거래일자 추가
     - 취소 연관 거래 조회를 고려하여 원관리번호 컬럼 추가
