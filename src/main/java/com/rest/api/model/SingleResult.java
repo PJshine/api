@@ -1,5 +1,6 @@
 package com.rest.api.model;
 
+import com.rest.api.model.response.CommonResult;
 import lombok.*;
 
 @Getter

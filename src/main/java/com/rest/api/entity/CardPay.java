@@ -1,5 +1,6 @@
 package com.rest.api.entity;
 
+import com.rest.api.crypto.CryptoConverter;
 import lombok.*;
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -13,17 +14,27 @@ import java.sql.Timestamp;
 @Table(name = "CARD_PAY_BASE")
 public class CardPay {
     @Id // primaryKey임을 알립니다.
-    private String trscMgntNo;		//TRSC_MGNT_NO
-    private Timestamp trscDt;			//TRSC_DT
-    private String ognTrscMgntNo;	//OGN_TRSC_MGNT_NO
+    private String mgntNo;		    //MGNT_NO
+    private Timestamp trscDt;		//TRSC_DT
+    private String ognMgntNo;	    //OGN_MGNT_NO
     private String mercNo;			//MERC_NO
     private String tmlIdNo;			//TML_ID_NO
+    @Convert(converter = CryptoConverter.class)
     private String cardInfo;		//CARD_INFO
     private String payTypCd;		//PAY_TYP_CD
     private String payStCd;			//PAY_ST_CD
     private String itlmMmsCnt;		//ITLM_MMS_CNT
     private int payAmt;				//PAY_AMT
     private int vatAmt;				//VAT_AMT
-    private int canAmt;				//CAN_AMT
+    private int canPayAmt;	        //CAN_AMT
     private int canVatAmt;			//CAN_VAT_AMT
+
+    //취소
+    public CardPay setCancel(String ognMgntNo, String payStCd, int canAmt, int canVatAmt) {
+        this.ognMgntNo  = ognMgntNo;
+        this.payStCd    = payStCd;
+        this.canPayAmt  = canAmt;
+        this.canVatAmt  = canVatAmt;
+        return this;
+    }
 }

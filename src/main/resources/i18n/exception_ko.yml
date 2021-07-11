@@ -1,0 +1,16 @@
+# exception_ko.yml
+unKnown:
+  code: "9999"
+  msg: "알수 없는 오류가 발생하였습니다."
+notFound:
+  code: "1000"
+  msg: "데이터가 없습니다."
+overPayAmt:
+  code: "1001"
+  msg: "취소금액은 결제금액을 초과할수 없습니다."
+overVatAmt:
+  code: "1002"
+  msg: "취소금부가가치세는 결제부가가치세를 초과할수 없습니다."
+alreadyCan:
+  code: "1003"
+  msg : "이미 취소되었습니다."

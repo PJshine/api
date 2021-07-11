@@ -1,4 +1,4 @@
-package com.rest.api.model;
+package com.rest.api.model.response;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;

@@ -1,21 +1,20 @@
 package com.rest.api.controller;
 
-import junit.framework.TestCase;
+import org.junit.Test;
 
-public class CardPayControllerTest extends TestCase {
+import static org.junit.Assert.*;
 
-    public void testSearchCardPayAll() {
+public class CardPayControllerTest {
+
+    @Test
+    public void searchCardPay() {
     }
 
-    public void testSearchCardPay() {
+    @Test
+    public void cardPay() {
     }
 
-    public void testCardPay() {
-    }
-
-    public void testCancelCardPay() {
-    }
-
-    public void testInsertCardPay() {
+    @Test
+    public void cancelCardPay() {
     }
 }
