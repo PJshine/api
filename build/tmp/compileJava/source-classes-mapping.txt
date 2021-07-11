@@ -30,8 +30,8 @@ com/rest/api/model/ParamMsgCardPay.java
  com.rest.api.model.ParamMsgCardPay
 com/rest/api/advice/exception/CardPayException.java
  com.rest.api.advice.exception.CardPayException
-com/rest/api/controller/CardPayController.java
- com.rest.api.controller.CardPayController
+com/rest/api/crypto/Seed.java
+ com.rest.api.crypto.Seed
 com/rest/api/model/ResponseSearchCardPay.java
  com.rest.api.model.ResponseSearchCardPay
  com.rest.api.model.ResponseSearchCardPay$ResponseSearchCardPayBuilder
@@ -65,5 +65,5 @@ com/rest/api/model/response/MsgResult.java
  com.rest.api.model.response.MsgResult
 com/rest/api/advice/exception/OverCanVatAmtException.java
  com.rest.api.advice.exception.OverCanVatAmtException
-com/rest/api/crypto/Seed.java
- com.rest.api.crypto.Seed
+com/rest/api/controller/CardPayController.java
+ com.rest.api.controller.CardPayController

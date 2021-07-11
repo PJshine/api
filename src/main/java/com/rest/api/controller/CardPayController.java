@@ -41,10 +41,6 @@ public class CardPayController {
     @ResponseBody
     public ResponseSearchCardPay searchCardPay(RequestSearchCardPay requestSearchCardPay) {
         CardPay cardPayInfo = cardPayService.searchCardPay(requestSearchCardPay.getMgntNo());
-        System.out.println("getTrscDt >>> " + cardPayInfo.getTrscDt());
-        System.out.println("getCardInfo >>> " + cardPayInfo.getCardInfo());
-        System.out.println("getPayTypCd >>> " + cardPayInfo.getPayTypCd());
-        System.out.println("getPayStCd >>> " + cardPayInfo.getPayStCd());
 
         SimpleDateFormat sdf = new SimpleDateFormat("YY/MM/dd HH:mm:ss");
         String trscDt = sdf.format(cardPayInfo.getTrscDt());
@@ -161,6 +157,12 @@ public class CardPayController {
             requestCardPayCancel.setVatAmt(canVatAmt);
         } else {
             canVatAmt = requestCardPay.getVatAmt();
+        }
+
+        //기 취소된 금액과 해당 거래에서 취소하려는 금액 합이 결제금액과 같으면 부가가치세는 기존에 남아 있는 금액으로 처리함
+        if(cardPayInfo.getPayAmt() == (cardPayInfo.getCanPayAmt() + requestCardPayCancel.getPayAmt())) {
+            canVatAmt = cardPayInfo.getVatAmt() - cardPayInfo.getCanVatAmt();
+            requestCardPayCancel.setVatAmt(canVatAmt);
         }
 
         System.out.println("getMgntNo >>> " + requestCardPayCancel.getMgntNo());
